@@ -1,0 +1,4 @@
+create table students(roll_no integer primary key,name varchar,dob date address varchar,id integer,foreign key(id) references teachers(id));
+create table teachers(id integer primary key,name varchar,salary integer,sub_code varchar, foreign key(sub_code) references subjects(sub_code));
+create table subjects(sub_code integer primary key,sub_name varchar);
+create table enrolled_subjects(enrollment_id integer primary key,sub_code integer,roll_no integer,foreign key(sub_code) references subjects(sub_code),foreign key(roll_no) references students(roll_no));
